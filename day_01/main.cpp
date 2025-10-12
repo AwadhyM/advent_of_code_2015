@@ -1,5 +1,5 @@
 #include "day01.hpp"
-#include <exception>
+#include "utils.hpp"
 #include <stdexcept>
 
 int main(int argc, char *argv[]) {

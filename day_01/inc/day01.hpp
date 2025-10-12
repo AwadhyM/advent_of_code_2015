@@ -3,7 +3,6 @@
 #include <string_view>
 #include <vector>
 
-std::vector<std::string> read_input(const std::string &path);
 constexpr int count_step(const char paren);
 int count_steps(std::string_view line);
 int solve_part_1(std::vector<std::string> input);
