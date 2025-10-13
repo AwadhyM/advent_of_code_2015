@@ -1,4 +1,5 @@
 #include "utils.hpp"
+#include <cctype>
 #include <filesystem>
 #include <fstream>
 #include <stdexcept>
@@ -17,3 +18,11 @@ std::vector<std::string> read_input(const std::string &path) {
   }
   return lines;
 }
+
+int to_num(char num) {
+  if (!std::isdigit(num))
+    throw std::invalid_argument(
+        "Unable to convert char to number as it does not represent a number");
+
+  return num - '0';
+};

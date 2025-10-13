@@ -6,3 +6,5 @@ target_include_directories(utilities
 	PUBLIC
 		inc
 )
+
+add_subdirectory(tests)
