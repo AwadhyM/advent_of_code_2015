@@ -19,3 +19,4 @@ FetchContent_MakeAvailable(googletest)
 
 add_subdirectory(utils)
 add_subdirectory(day_01)
+add_subdirectory(day_02)
