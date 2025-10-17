@@ -19,5 +19,8 @@ int main(int argc, char *argv[]) {
   std::cout << "Total paper square area is"
             << puzzle::part1::solve_part_1(input) << std::endl;
 
+  std::cout << "Total paper ribbon length is"
+            << puzzle::part2::solve_part_2(input) << std::endl;
+
   return 0;
 }
