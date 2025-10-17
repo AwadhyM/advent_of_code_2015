@@ -4,25 +4,31 @@
 
 namespace puzzle {
 
+struct Dimensions {
+  Dimensions(int length, int width, int height)
+      : length(length), width(width), height(height) {}
+
+  int length{0};
+  int width{0};
+  int height{0};
+};
+
 class box {
 public:
-  box(int length, int width, int height)
-      : m_length(length), m_width(width), m_height(height) {
+  box(Dimensions dimensions) : m_dimensions(dimensions) {
     calculate_surface_area();
     calculate_area_smallest_side();
     calculate_area();
     calculate_ribbon_length();
   }
 
-  int get_m_surface_area() const { return m_surface_area; }
-  int get_m_area() const { return m_area; }
+  int get_surface_area() const { return m_surface_area; }
+  int get_area() const { return m_area; }
   int get_smallest_side() const { return smallest_side; }
   int get_ribbon_length() const { return m_ribbon_length; }
 
 private:
-  int m_length{0};
-  int m_width{0};
-  int m_height{0};
+  Dimensions m_dimensions;
   int m_area{0};
   int m_surface_area{0};
   int smallest_side{0};
@@ -34,13 +40,13 @@ private:
   void calculate_area();
 };
 
-std::vector<int> get_dimensions(const std::string &expr);
+Dimensions get_dimensions(const std::string &expr);
 namespace part1 {
-uint64_t solve_part_1(std::vector<std::string> input);
+uint64_t solve_part_1(const std::vector<std::string> &input);
 } // namespace part1
 
 namespace part2 {
-uint64_t solve_part_2(std::vector<std::string> input);
+uint64_t solve_part_2(const std::vector<std::string> &input);
 }
 
 } // namespace puzzle
