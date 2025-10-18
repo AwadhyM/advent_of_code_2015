@@ -1,6 +1,7 @@
-#include "day01.hpp"
+#include "day03.hpp"
 #include "utils.hpp"
 #include <stdexcept>
+#include <iostream>
 
 int main(int argc, char *argv[]) {
 
