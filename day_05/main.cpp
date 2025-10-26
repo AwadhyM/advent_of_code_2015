@@ -1,0 +1,26 @@
+#include "day05.hpp"
+#include "utils.hpp"
+#include <iostream>
+#include <stdexcept>
+
+int main(int argc, char *argv[]) {
+
+  if (argc < 2) {
+    throw std::runtime_error("Programme requires passing of an argument");
+  }
+
+  const auto input = read_input(argv[1]);
+  if (input.empty()) {
+    throw std::runtime_error("Input file is empty");
+  }
+
+  std::vector<std::string> file_contents = input;
+
+  std::cout << "Total names on nice list are: "
+            << puzzle::part1::solve_part_1(input) << std::endl;
+
+
+  std::cout << "Total names on nice list are: "
+            << puzzle::part2::solve(input) << std::endl;
+  return 0;
+}
